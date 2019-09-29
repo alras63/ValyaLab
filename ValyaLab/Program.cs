@@ -15,6 +15,8 @@ namespace ValyaLab
 
             string nStr = Console.ReadLine();
             int n; //количество секунд
+            double summa = 0;
+
             if (Int32.TryParse(nStr, out n) && n > 0)
             {
                 Console.WriteLine($"Каждое тело имеет свою скорость, поэтому введите, какой путь P проходит Ваше тело за 1 секунду, а мы расчитаем его пройденный путь за {n} секунд");
@@ -23,7 +25,6 @@ namespace ValyaLab
 
                 if (Double.TryParse(pStr, out p) && p > 0)
                 {
-                    double summa = 0;
                     for (int i = 1; i < n + 1; i++) //цикл контроля секунд
                     {
                         for (int j = 0; j < n + 1; j++) //цикл контроля слагаемого
@@ -37,7 +38,10 @@ namespace ValyaLab
                         }
 
                     }
+                    Console.WriteLine($"ИТОГ: {summa}");
+
                 }
+
                 else
                 {
                     Console.WriteLine("Некорректные входные данные");
